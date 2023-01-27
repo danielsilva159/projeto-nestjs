@@ -48,7 +48,9 @@ export class JogadoresService {
   }
 
   async consultarJogadorPeloId(_id: string): Promise<Jogador> {
-    const jogadorEncotrado = await this.jogadorModel.findOne({ _id }).exec();
+    const jogadorEncotrado = await this.jogadorModel.findById({ _id }).exec();
+    console.log(jogadorEncotrado);
+
     if (!jogadorEncotrado) {
       throw new NotFoundException(`Jogador com id ${_id} não encotrado`);
     }

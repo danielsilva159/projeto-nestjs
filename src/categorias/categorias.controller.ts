@@ -50,8 +50,6 @@ export class CategoriasController {
   }
   @Post(':categoria/jogadores/:jogador')
   async atribuirCategoriaJogador(@Param() params: string[]): Promise<void> {
-    console.log(params);
-
     return await this.categoriasService.atribuirCategoriaJogador(params);
   }
 }
